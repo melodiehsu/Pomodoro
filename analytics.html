@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ANALYTICS</title>
+  <link rel="stylesheet" href="css/all.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/all.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <div class="menu">
+        <ul>
+          <li><a href="to_do_list.html"><span class="material-icons md-36">
+            list
+            </span>to-do list</a></li>
+          <li><a class="now_location" href="analytics.html"><span class="material-icons md-36">
+            insert_chart
+            </span>analytics</a></li>
+          <li><a href="ringtones.html"><span class="material-icons md-36">
+            library_music
+            </span>ringtones</a></li>
+        </ul>
+      </div>
+      <div class="small_timer">
+        <div class="small_counter">
+          <a href="POMODORO.html"><span class="material-icons start">
+            play_arrow
+          </span></a>
+        </div>
+        <div class="mission_info">
+          <div class="small_countdown">
+            25:00
+          </div>
+          <p>the first thing to do today</p>
+        </div>
+      </div>
+    </div>
+    <div class="analytics">
+      <div class="subcategory">
+        focus time
+      </div>
+      <ul>
+        <li>
+          <p>today</p>
+          <span class="number">20</span><span>/tomato</span>
+        </li>
+        <li>
+          <p>week</p>
+          <span class="number">108</span><span>/tomato</span>
+        </li>
+      </ul>
+      <div class="subcategory">
+        chart
+        <div class="week_selecter">
+          <button><span class="material-icons dropup">keyboard_arrow_left</span></button>
+          <p>2021.05.03 - 2021.05.09</p>
+          <button><span class="material-icons dropdown">keyboard_arrow_right</span></button>
+        </div>
+      </div>
+      <canvas id="myChart" width="420" height="243"></canvas>
+      <script>
+      var ctx = document.getElementById('myChart').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['05/03', '05/04', '05/05', '05/06', '05/07', '05/08', '05/09'],
+          datasets: [{
+            label: 'number of tomatoes',
+            data: [16, 12, 16, 8, 12, 4, 20,],
+            backgroundColor: [
+                '#ffffff',
+                '#ffffff',
+                '#ffffff',
+                '#ffffff',
+                '#ffffff',
+                '#ffffff',
+                '#ff4384'
+            ],
+            borderWidth: 0,
+          }]
+        },
+        options: {
+          scales:{
+            y:{
+              ticks:{
+                font:{
+                  size: 16,
+                  family: 'Roboto'
+                },
+                color:'white'
+              },
+              grid:{
+                drawOnChartArea: false,
+                drawTicks: false,
+                borderColor:'white',
+              }
+            },
+            x:{
+              ticks:{
+                font:{
+                  size:16,
+                  family: 'Roboto'
+                },
+                color:'white'
+              },
+              grid:{
+                drawOnChartArea: false,
+                drawTicks: false,
+                borderColor:'white',
+              }
+            }
+          },
+          responsive: true,
+          plugins: {
+            legend: {
+              display: false,
+            },
+          }
+        },
+      });
+      </script>
+    </div>
+    <div class="footer">
+      <div class="close">
+        <a href="POMODORO.html"><span class="material-icons md-48">
+          clear
+          </span></a>
+      </div>
+      <h1>pomodoro</h1>
+    </div>
+  </div>
+</body>
+</html>
