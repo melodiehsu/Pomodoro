@@ -26,7 +26,7 @@ $('.ringtones ul li').click(function (e) {
   }
   console.log($(this)[0]);
   if ($(this)[0].textContent != 'None') {
-    currentSound = createSound('sound/' + $(this)[0].querySelector('.sound').innerText + '.mp3');
+    currentSound = createSound('sound/' + $(this)[0].querySelector('.sound').innerText.toLowerCase() + '.mp3');
     currentSound.play();
   }
 });
