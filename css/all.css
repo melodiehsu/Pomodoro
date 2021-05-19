@@ -1,0 +1,547 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,700&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://example.com/MaterialIcons-Regular.eot);
+  /* For IE6-8 */
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url(https://example.com/MaterialIcons-Regular.woff2) format("woff2"), url(https://example.com/MaterialIcons-Regular.woff) format("woff"), url(https://example.com/MaterialIcons-Regular.ttf) format("truetype");
+}
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  cursor: pointer;
+  vertical-align: middle;
+  transform: translateY(-0.05em);
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+
+/* Rules for sizing the icon. */
+.material-icons.md-18 {
+  font-size: 18px;
+}
+
+.material-icons.md-24 {
+  font-size: 24px;
+}
+
+.material-icons.md-36 {
+  font-size: 36px;
+}
+
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+.material-icons.md-96 {
+  font-size: 96px;
+}
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.material-icons.md-dark.md-inactive {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light {
+  color: white;
+}
+
+.material-icons.md-light.md-inactive {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.material-icons.md-dark {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.material-icons.md-dark.md-inactive {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+.material-icons.md-light {
+  color: white;
+}
+
+.material-icons.md-light.md-inactive {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.material-icons.orange_red {
+  color: #FF4384;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+body a {
+  text-decoration: none;
+}
+body h1 {
+  font-family: "Futura-Bold", arial;
+  writing-mode: vertical-lr;
+}
+body button {
+  cursor: pointer;
+  background-color: #ffffff;
+  outline-style: none;
+  border-style: none;
+}
+body input {
+  width: 100%;
+  outline-style: none;
+  border-style: none;
+  font: italic normal bold 16px Roboto;
+  color: #FF4384;
+  padding: 19px 0px 18px 17px;
+}
+body input::placeholder {
+  content: "";
+  font-size: 16px;
+  color: #FF4384;
+  text-transform: uppercase;
+  padding: 19px 0px 18px 1px;
+}
+
+.two-color_wrapper {
+  width: 100%;
+  height: 100vh;
+  background-color: #FFEDF7;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+.two-color_wrapper::before {
+  content: "";
+  width: 35%;
+  height: 100vh;
+  background-color: #003164;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  background-color: #003164;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tasks {
+  width: 40%;
+  height: 100vh;
+  padding: 8vh 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.add_a_mission {
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+}
+.add_a_mission button {
+  padding: 16px 16px 16px 0px;
+}
+.add_a_mission button span {
+  transform: translateY(0em);
+}
+
+.my_list_today {
+  width: 100%;
+  color: #003164;
+}
+.my_list_today li {
+  padding: 3px 0px;
+  margin: 4px 0px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  border-bottom: 1px solid rgba(0, 31, 64, 0.25);
+}
+.my_list_today li p {
+  flex-grow: 10;
+}
+.my_list_today a {
+  display: block;
+  text-align: right;
+  color: #FF4384;
+  padding: 5px 0px;
+}
+
+.timer {
+  width: 20%;
+  padding: 50px 10px;
+}
+
+.timer-border {
+  width: 75vh;
+  height: 75vh;
+  border-radius: 50%;
+  border: 4px solid #FF4384;
+  position: absolute;
+  top: 50vh;
+  right: 35%;
+  transform: translate(50%, -50%);
+  z-index: 10;
+}
+
+.big_countdown {
+  width: 70vh;
+  height: 70vh;
+  position: absolute;
+  top: 50vh;
+  right: 35%;
+  transform: translate(50%, -50%);
+  background-color: #FF4384;
+  border-radius: 50%;
+  border: 4px solid #FF4384;
+  z-index: 20;
+}
+.big_countdown .material-icons.start {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+}
+.big_countdown .material-icons.stop {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(160%, 90%);
+  color: #ffffff;
+}
+
+.footer {
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8vh 5vw;
+}
+.footer a {
+  color: #ffffff;
+}
+.footer h1 {
+  font-size: 24px;
+  color: #ffffff;
+  transform: translate(25%, 0);
+}
+.footer ul li {
+  padding: 0px 0px 48px 0px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8vh 9vw 8vh 5vw;
+  position: relative;
+}
+
+.menu li {
+  padding: 0px 0px 45px;
+}
+.menu span {
+  margin-right: 10px;
+}
+.menu a {
+  font-size: 36px;
+  color: #FFFFFF33;
+}
+.menu .now_location {
+  color: #FF4384;
+}
+
+.small_timer {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background-color: #FFEDF7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0px;
+  transform: translateY(50%);
+}
+.small_timer .small_counter {
+  box-shadow: 0px 0px 0 6px #003164;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background-color: #003164;
+  border: 2px solid #FF4384;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.small_timer a {
+  height: 80px;
+  width: 80px;
+  background-color: #FF4384;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  z-index: 10;
+}
+.small_timer a .material-icons.start {
+  font-size: 53px;
+  color: #ffffff;
+}
+.small_timer .mission_info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(calc(-50% - 20px));
+}
+.small_timer .mission_info div {
+  font-size: 80px;
+  color: #FF4384;
+}
+.small_timer .mission_info p {
+  color: #003164;
+}
+
+.to-do_list {
+  width: 33%;
+  padding: 8vh 1vw;
+  color: #ffffff;
+  overflow: scroll;
+}
+.to-do_list span {
+  transform: translateY(-0.2em);
+}
+.to-do_list .subcategory {
+  color: #ffffff;
+  background-color: #FFFFFF33;
+  padding: 8px 16px;
+  font-size: 24px;
+  margin-bottom: 16px;
+  border: none;
+}
+.to-do_list .subcategory span {
+  transform: translateY(0em);
+}
+.to-do_list .subcategory span.dropup {
+  display: none;
+}
+.to-do_list .subcategory button {
+  background-color: transparent;
+  padding: 0px;
+}
+.to-do_list .subcategory button span {
+  color: #ffffff;
+}
+.to-do_list .dropdown_open {
+  display: none;
+}
+
+.to-do {
+  width: 100%;
+  padding: 48px 0px;
+}
+.to-do p {
+  flex-grow: 10;
+  padding: 0px 0px 0px 5px;
+  font-size: 16px;
+}
+.to-do ul li {
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 0px;
+  border-bottom: 1px solid #FFFFFF33;
+  margin-bottom: 10px;
+}
+
+.done {
+  width: 100%;
+}
+.done p {
+  flex-grow: 10;
+  font-style: italic;
+  text-decoration: line-through;
+  text-align: middle;
+  padding: 0px 5px 0px;
+}
+.done ul li {
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 0px;
+  border-bottom: 1px solid #FFFFFF33;
+  margin-bottom: 10px;
+}
+.done .tomatoes {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+.ringtones {
+  width: 33%;
+  padding: 8vh 1vw;
+  color: #ffffff;
+  overflow: scroll;
+}
+.ringtones .subcategory {
+  color: #ffffff;
+  background-color: #FFFFFF33;
+  padding: 8px 16px;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+.ringtones ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 19px;
+  padding: 16px 0px 48px 0px;
+}
+.ringtones ul li {
+  flex-basis: 30%;
+  font-size: 19px;
+  cursor: pointer;
+}
+.ringtones ul li span {
+  transform: translateY(-0.04em);
+  margin-right: 4px;
+}
+.ringtones ul li span.checked {
+  display: none;
+  color: #FF4384;
+}
+
+.analytics {
+  width: 33%;
+  padding: 8vh 1vw;
+  color: #ffffff;
+  overflow: scroll;
+}
+.analytics .subcategory {
+  color: #ffffff;
+  background-color: #FFFFFF33;
+  padding: 8px 16px;
+  font-size: 24px;
+  margin-bottom: 16px;
+  white-space: nowrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.analytics .subcategory .week_selecter {
+  display: flex;
+  align-items: center;
+}
+.analytics .subcategory .week_selecter p {
+  font-size: 16px;
+  display: inline-block;
+}
+.analytics .subcategory .week_selecter button {
+  background-color: transparent;
+}
+.analytics .subcategory .week_selecter button span {
+  color: #ffffff;
+  padding: 0px;
+}
+.analytics ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 0px 46px 0px;
+}
+.analytics ul span {
+  color: #FFFFFF33;
+}
+.analytics ul .number {
+  color: #FF4384;
+  font-size: 64px;
+  padding-right: 8px;
+}
